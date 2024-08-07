@@ -5,9 +5,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-@TeleOp (name = "4")
+@TeleOp (name = "4bpran")
 
-public class TASK4 extends OpMode {
+public class T4b extends OpMode {
 
     DcMotor fl = null;
     DcMotor fr = null;
@@ -29,16 +29,27 @@ public class TASK4 extends OpMode {
         bl.setPower(0);
         br.setPower(0);
     }
-
     @Override
 
     public void loop() {
 
-        if (gamepad1.right_trigger > 0.5){
-            fl.setPower(0.5);
-            fr.setPower(0.5);
-            bl.setPower(0.5);
-            br.setPower(0.5);
+        if (gamepad1.right_bumper){
+            fl.setPower(0.6);
+            fr.setPower(0.6);
+            bl.setPower(0.6);
+            br.setPower(0.6);
+        } else {
+            fl.setPower(0);
+            fr.setPower(0);
+            bl.setPower(0);
+            br.setPower(0);
+        }
+
+        if (gamepad1.left_bumper){
+            fl.setPower(-0.35);
+            fr.setPower(-0.35);
+            bl.setPower(-0.35);
+            br.setPower(-0.35);
         } else {
             fl.setPower(0);
             fr.setPower(0);
