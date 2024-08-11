@@ -39,89 +39,110 @@ public class Pran7a extends LinearOpMode {
 
         waitForStart();
 
-        double d ;
-        double s ;
-        double r ;
+        double d;
+        double s;
+        double r;
 
-
+        double flp, frp, blp, brp;
 
         while (opModeIsActive()) {
-            d = gamepad1.left_stick_y;
+            d = gamepad1.left_stick_y * -1;
             s = gamepad1.left_stick_x;
             r = gamepad1.right_stick_y;
 
+            flp = d + r + s;
+            frp = d - r - s;
+            blp = d + r - s;
+            brp = d - r + s;
 
-            if (gamepad1.left_stick_y >= -0.2) {
-                fl.setPower(d);
-                fr.setPower(d);
-                bl.setPower(d);
-                br.setPower(d);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
+            double maxf = Math.max((Math.abs(flp)), (Math.abs(frp)));
+            double maxb = Math.max((Math.abs(blp)), (Math.abs(brp)));
+            double maxfb = Math.max((Math.abs(maxf)), (Math.abs(maxb)));
+
+            if (maxfb > 1) {
+                flp = flp/maxfb;
+                frp = frp/maxfb;
+                blp = blp/maxfb;
+                brp = brp/maxfb;
             }
 
-            if (gamepad1.left_stick_y >= 0.2) {
-                fl.setPower(-d);
-                fr.setPower(-d);
-                bl.setPower(-d);
-                br.setPower(-d);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
-            }
-
-            if (gamepad1.left_stick_x >= -0.2) {
-                fl.setPower(-s);
-                fr.setPower(s);
-                bl.setPower(s);
-                br.setPower(-s);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
-            }
-
-            if (gamepad1.left_stick_x >= 0.2) {
-                fl.setPower(s);
-                fr.setPower(-s);
-                bl.setPower(-s);
-                br.setPower(s);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
-            }
-
-            if (gamepad1.right_stick_x >= 0.2) {
-                fl.setPower(r);
-                fr.setPower(-r);
-                bl.setPower(r);
-                br.setPower(-r);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
-            }
-
-            if (gamepad1.right_stick_x >= -0.2) {
-                fl.setPower(-r);
-                fr.setPower(r);
-                bl.setPower(-r);
-                br.setPower(r);
-            } else {
-                fl.setPower(0);
-                fr.setPower(0);
-                bl.setPower(0);
-                br.setPower(0);
-            }
+            fl.setPower(flp);
+            fr.setPower(frp);
+            bl.setPower(blp);
+            br.setPower(brp);
+//
+//            if (gamepad1.left_stick_y >= -0.2) {
+//                fl.setPower(d);
+//                fr.setPower(d);
+//                bl.setPower(d);
+//                br.setPower(d);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//
+//            if (gamepad1.left_stick_y >= 0.2) {
+//                fl.setPower(-d);
+//                fr.setPower(-d);
+//                bl.setPower(-d);
+//                br.setPower(-d);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//
+//            if (gamepad1.left_stick_x >= -0.2) {
+//                fl.setPower(-s);
+//                fr.setPower(s);
+//                bl.setPower(s);
+//                br.setPower(-s);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//
+//            if (gamepad1.left_stick_x >= 0.2) {
+//                fl.setPower(s);
+//                fr.setPower(-s);
+//                bl.setPower(-s);
+//                br.setPower(s);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//
+//            if (gamepad1.right_stick_x >= 0.2) {
+//                fl.setPower(r);
+//                fr.setPower(-r);
+//                bl.setPower(r);
+//                br.setPower(-r);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//
+//            if (gamepad1.right_stick_x >= -0.2) {
+//                fl.setPower(-r);
+//                fr.setPower(r);
+//                bl.setPower(-r);
+//                br.setPower(r);
+//            } else {
+//                fl.setPower(0);
+//                fr.setPower(0);
+//                bl.setPower(0);
+//                br.setPower(0);
+//            }
+//        }
         }
     }
 }
