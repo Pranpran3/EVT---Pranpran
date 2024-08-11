@@ -48,7 +48,7 @@ public class Pran7a extends LinearOpMode {
         while (opModeIsActive()) {
             d = gamepad1.left_stick_y * -1;
             s = gamepad1.left_stick_x;
-            r = gamepad1.right_stick_y;
+            r = gamepad1.right_stick_x;
 
             flp = d + r + s;
             frp = d - r - s;
