@@ -31,9 +31,7 @@ public class TASK4 extends OpMode {
     }
 
     @Override
-
     public void loop() {
-
         if (gamepad1.right_trigger > 0.5){
             fl.setPower(0.5);
             fr.setPower(0.5);

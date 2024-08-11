@@ -38,11 +38,11 @@ public class Pran7a extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            if (gamepad1.left_stick_y >= -0.2) {
-                fl.setPower(0.5);
-                fr.setPower(0.5);
-                bl.setPower(0.5);
-                br.setPower(0.5);
+            if (gamepad1.left_stick_y >= -0.75) {
+                fl.setPower(0.3);
+                fr.setPower(0.3);
+                bl.setPower(0.3);
+                br.setPower(0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
@@ -50,11 +50,11 @@ public class Pran7a extends LinearOpMode {
                 br.setPower(0);
             }
 
-            if (gamepad1.left_stick_y >= 0.2) {
-                fl.setPower(-0.5);
-                fr.setPower(-0.5);
-                bl.setPower(-0.5);
-                br.setPower(-0.5);
+            if (gamepad1.left_stick_y >= 0.75) {
+                fl.setPower(-0.3);
+                fr.setPower(-0.3);
+                bl.setPower(-0.3);
+                br.setPower(-0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
@@ -62,11 +62,11 @@ public class Pran7a extends LinearOpMode {
                 br.setPower(0);
             }
 
-            if (gamepad1.left_stick_x >= -0.2) {
-                fl.setPower(-0.5);
-                fr.setPower(0.5);
-                bl.setPower(0.5);
-                br.setPower(-0.5);
+            if (gamepad1.left_stick_x >= -0.75) {
+                fl.setPower(-0.3);
+                fr.setPower(0.3);
+                bl.setPower(0.3);
+                br.setPower(-0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
@@ -74,11 +74,11 @@ public class Pran7a extends LinearOpMode {
                 br.setPower(0);
             }
 
-            if (gamepad1.left_stick_x >= 0.2) {
-                fl.setPower(0.5);
-                fr.setPower(-0.5);
-                bl.setPower(-0.5);
-                br.setPower(0.5);
+            if (gamepad1.left_stick_x >= 0.75) {
+                fl.setPower(0.3);
+                fr.setPower(-0.3);
+                bl.setPower(-0.3);
+                br.setPower(0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
@@ -86,11 +86,11 @@ public class Pran7a extends LinearOpMode {
                 br.setPower(0);
             }
 
-            if (gamepad1.right_stick_x >= 0.2) {
-                fl.setPower(0.5);
-                fr.setPower(-0.5);
-                bl.setPower(0.5);
-                br.setPower(-0.5);
+            if (gamepad1.right_stick_x >= 0.75) {
+                fl.setPower(0.3);
+                fr.setPower(-0.3);
+                bl.setPower(0.3);
+                br.setPower(-0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
@@ -98,11 +98,11 @@ public class Pran7a extends LinearOpMode {
                 br.setPower(0);
             }
 
-            if (gamepad1.right_stick_x >= -0.2) {
-                fl.setPower(-0.5);
-                fr.setPower(0.5);
-                bl.setPower(-0.5);
-                br.setPower(0.5);
+            if (gamepad1.right_stick_x >= -0.75) {
+                fl.setPower(-0.3);
+                fr.setPower(0.3);
+                bl.setPower(-0.3);
+                br.setPower(0.3);
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
