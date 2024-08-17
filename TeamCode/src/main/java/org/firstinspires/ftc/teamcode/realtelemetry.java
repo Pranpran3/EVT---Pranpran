@@ -43,38 +43,41 @@ public class realtelemetry extends LinearOpMode {
 
         waitForStart();
 
-        if (gamepad1.left_stick_x != 0) {
-            fl.setPower(gamepad1.left_stick_x);
-            fr.setPower(-gamepad1.left_stick_x);
-            bl.setPower(-gamepad1.left_stick_x);
-            br.setPower(gamepad1.left_stick_x);
-        } else {
-            fl.setPower(0);
-            fr.setPower(0);
-            bl.setPower(0);
-            br.setPower(0);
+        while (opModeIsActive()) {
+
+            if (gamepad1.left_stick_x != 0) {
+                fl.setPower(gamepad1.left_stick_x);
+                fr.setPower(-gamepad1.left_stick_x);
+                bl.setPower(-gamepad1.left_stick_x);
+                br.setPower(gamepad1.left_stick_x);
+            } else {
+                fl.setPower(0);
+                fr.setPower(0);
+                bl.setPower(0);
+                br.setPower(0);
+            }
+
+            if (gamepad1.left_stick_y != 0) {
+                fl.setPower(gamepad1.left_stick_x * (-1));
+                fr.setPower(gamepad1.left_stick_x * (-1));
+                bl.setPower(gamepad1.left_stick_x * (-1));
+                br.setPower(gamepad1.left_stick_x * (-1));
+            } else {
+                fl.setPower(0);
+                fr.setPower(0);
+                bl.setPower(0);
+                br.setPower(0);
+            }
+
+            telemetry.addData("fl_position", fl.getCurrentPosition());
+            telemetry.addData("fr_position", fr.getCurrentPosition());
+            telemetry.addData("bl_position", bl.getCurrentPosition());
+            telemetry.addData("br_position", br.getCurrentPosition());
+
+            telemetry.addData("fl_speed", "%.2f", fl.getPower());
+            telemetry.addData("fr_speed", "%.2f", fr.getPower());
+            telemetry.addData("bl_speed", "%.2f", bl.getPower());
+            telemetry.addData("br_speed", "%.2f", br.getPower());
         }
-
-        if (gamepad1.left_stick_y != 0) {
-            fl.setPower(gamepad1.left_stick_x * (-1));
-            fr.setPower(gamepad1.left_stick_x * (-1));
-            bl.setPower(gamepad1.left_stick_x * (-1));
-            br.setPower(gamepad1.left_stick_x * (-1));
-        } else {
-            fl.setPower(0);
-            fr.setPower(0);
-            bl.setPower(0);
-            br.setPower(0);
-        }
-
-        telemetry.addData("fl_position", fl.getCurrentPosition());
-        telemetry.addData("fr_position", fr.getCurrentPosition());
-        telemetry.addData("bl_position", bl.getCurrentPosition());
-        telemetry.addData("br_position", br.getCurrentPosition());
-
-        telemetry.addData("fl_speed","%.2f", fl.getPower());
-        telemetry.addData("fr_speed","%.2f", fr.getPower());
-        telemetry.addData("bl_speed","%.2f", bl.getPower());
-        telemetry.addData("br_speed","%.2f", br.getPower());
     }
 }
