@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -32,20 +31,14 @@ public class realtelemetry extends LinearOpMode {
         bl.setPower(0);
         br.setPower(0);
 
-        fl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        fr.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        bl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        br.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-        fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        fr.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        bl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        br.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        fl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        fr.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        bl.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        br.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         waitForStart();
 
         while (opModeIsActive()) {
-
             if (gamepad1.left_stick_x != 0) {
                 fl.setPower(gamepad1.left_stick_x);
                 fr.setPower(-gamepad1.left_stick_x);
@@ -59,10 +52,10 @@ public class realtelemetry extends LinearOpMode {
             }
 
             if (gamepad1.left_stick_y != 0) {
-                fl.setPower(gamepad1.left_stick_x * (-1));
-                fr.setPower(gamepad1.left_stick_x * (-1));
-                bl.setPower(gamepad1.left_stick_x * (-1));
-                br.setPower(gamepad1.left_stick_x * (-1));
+                fl.setPower(gamepad1.left_stick_y * (-1));
+                fr.setPower(gamepad1.left_stick_y * (-1));
+                bl.setPower(gamepad1.left_stick_y * (-1));
+                br.setPower(gamepad1.left_stick_y * (-1));
             } else {
                 fl.setPower(0);
                 fr.setPower(0);
