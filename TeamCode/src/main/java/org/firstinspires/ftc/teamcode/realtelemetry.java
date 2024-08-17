@@ -72,6 +72,8 @@ public class realtelemetry extends LinearOpMode {
             telemetry.addData("fr_speed", "%.2f", fr.getPower());
             telemetry.addData("bl_speed", "%.2f", bl.getPower());
             telemetry.addData("br_speed", "%.2f", br.getPower());
+
+            telemetry.update();
         }
     }
 }
