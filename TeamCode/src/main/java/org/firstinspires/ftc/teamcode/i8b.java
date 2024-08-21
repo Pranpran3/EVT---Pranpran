@@ -79,16 +79,10 @@ public class i8b extends LinearOpMode {
             br.setPower(brp);
 
             telemetry.addData("POS", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
-                    flc,
-                    frc,
-                    blc,
-                    brc
+                    flc, frc, blc, brc
             );
             telemetry.addData("PWR", "FL: %.2f, FR: %.2f, BL: %.2f, BR: %.2f",
-                    flp,
-                    frp,
-                    blp,
-                    brp
+                    flp, frp, blp, brp
             );
             telemetry.update();
 
