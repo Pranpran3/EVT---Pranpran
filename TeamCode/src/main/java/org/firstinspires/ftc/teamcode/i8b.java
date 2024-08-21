@@ -87,6 +87,8 @@ public class i8b extends LinearOpMode {
                     bl.getPower()
             );
 
+            telemetry.update();
+
 //            telemetry.addLine();
 //                telemetry.addData("fl_position", String.valueOf(fl.getCurrentPosition()), telemetry.addData("fr_position", fr.getCurrentPosition()));
 //                telemetry.addData("bl_position", String.valueOf(bl.getCurrentPosition()), telemetry.addData("br_position", br.getCurrentPosition()));
