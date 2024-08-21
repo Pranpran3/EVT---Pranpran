@@ -80,10 +80,10 @@ public class i8b extends LinearOpMode {
             blc = bl.getCurrentPosition();
             brc = br.getCurrentPosition();
 
-            telemetry.addData("POS", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
+            telemetry.addData("POS", "FL: %.0f, FR: %.0f, BL: %.0f, BR: %.0f",
                     flc, frc, blc, brc
             );
-            telemetry.addData("PWR", "FL: %.2f, FR: %.2f, BL: %.2f, BR: %.2f",
+            telemetry.addData("PWR", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
                     flp, frp, blp, brp
             );
             telemetry.update();
