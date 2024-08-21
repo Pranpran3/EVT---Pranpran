@@ -75,13 +75,11 @@ public class i8b extends LinearOpMode {
             br.setPower(brp);
 
             telemetry.addLine();
-                telemetry.addData("fl_position", String.valueOf(fl.getCurrentPosition()), "fr_position", fr.getCurrentPosition());
-                telemetry.addData("bl_position", String.valueOf(bl.getCurrentPosition()), "br_position", br.getCurrentPosition());
+                telemetry.addData("fl_position", String.valueOf(fl.getCurrentPosition()), telemetry.addData("fr_position", fr.getCurrentPosition()));
+                telemetry.addData("bl_position", String.valueOf(bl.getCurrentPosition()), telemetry.addData("br_position", br.getCurrentPosition()));
             telemetry.addLine();
-                telemetry.addData("fl_speed", "%.2f", flp);
-                telemetry.addData("fr_speed", "%.2f", frp);
-                telemetry.addData("bl_speed", "%.2f", blp);
-                telemetry.addData("br_speed", "%.2f", brp);
+                telemetry.addData("fl_speed", "%.2f", flp, telemetry.addData("fr_speed", "%.2f", frp));
+                telemetry.addData("bl_speed", "%.2f", blp, telemetry.addData("br_speed", "%.2f", brp));
             telemetry.update();
         }
     }
