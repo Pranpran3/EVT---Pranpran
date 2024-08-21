@@ -74,13 +74,26 @@ public class i8b extends LinearOpMode {
             bl.setPower(blp);
             br.setPower(brp);
 
-            telemetry.addLine();
-                telemetry.addData("fl_position", String.valueOf(fl.getCurrentPosition()), telemetry.addData("fr_position", fr.getCurrentPosition()));
-                telemetry.addData("bl_position", String.valueOf(bl.getCurrentPosition()), telemetry.addData("br_position", br.getCurrentPosition()));
-            telemetry.addLine();
-                telemetry.addData("fl_speed", "%.2f", flp, telemetry.addData("fr_speed", "%.2f", frp));
-                telemetry.addData("bl_speed", "%.2f", blp, telemetry.addData("br_speed", "%.2f", brp));
-            telemetry.update();
+            telemetry.addData("POS", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
+                    fl.getCurrentPosition(),
+                    fr.getCurrentPosition(),
+                    br.getCurrentPosition(),
+                    bl.getCurrentPosition()
+            );
+            telemetry.addData("PWR", "FL: %.2f, FR: %.2f, BL: %.2f, BR: %.2f",
+                    fl.getPower(),
+                    fr.getPower(),
+                    br.getPower(),
+                    bl.getPower()
+            );
+
+//            telemetry.addLine();
+//                telemetry.addData("fl_position", String.valueOf(fl.getCurrentPosition()), telemetry.addData("fr_position", fr.getCurrentPosition()));
+//                telemetry.addData("bl_position", String.valueOf(bl.getCurrentPosition()), telemetry.addData("br_position", br.getCurrentPosition()));
+//            telemetry.addLine();
+//                telemetry.addData("fl_speed", "%.2f", flp, telemetry.addData("fr_speed", "%.2f", frp));
+//                telemetry.addData("bl_speed", "%.2f", blp, telemetry.addData("br_speed", "%.2f", brp));
+//            telemetry.update();
         }
     }
 }
