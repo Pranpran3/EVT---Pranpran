@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -48,6 +47,11 @@ public class i8b extends LinearOpMode {
 
         double flp, frp, blp, brp;
 
+        double flc = fl.getCurrentPosition();
+        double frc = fr.getCurrentPosition();
+        double blc = bl.getCurrentPosition();
+        double brc = br.getCurrentPosition();
+
         while (opModeIsActive()) {
             d = gamepad1.left_stick_y * -1;
             s = gamepad1.left_stick_x;
@@ -75,18 +79,17 @@ public class i8b extends LinearOpMode {
             br.setPower(brp);
 
             telemetry.addData("POS", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
-                    fl.getCurrentPosition(),
-                    fr.getCurrentPosition(),
-                    br.getCurrentPosition(),
-                    bl.getCurrentPosition()
+                    flc,
+                    frc,
+                    blc,
+                    brc
             );
             telemetry.addData("PWR", "FL: %.2f, FR: %.2f, BL: %.2f, BR: %.2f",
-                    fl.getPower(),
-                    fr.getPower(),
-                    br.getPower(),
-                    bl.getPower()
+                    flp,
+                    frp,
+                    blp,
+                    brp
             );
-
             telemetry.update();
 
 //            telemetry.addLine();
