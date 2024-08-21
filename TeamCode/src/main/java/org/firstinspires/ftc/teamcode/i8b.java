@@ -47,10 +47,7 @@ public class i8b extends LinearOpMode {
 
         double flp, frp, blp, brp;
 
-        double flc = fl.getCurrentPosition();
-        double frc = fr.getCurrentPosition();
-        double blc = bl.getCurrentPosition();
-        double brc = br.getCurrentPosition();
+        double flc, frc, blc, brc;
 
         while (opModeIsActive()) {
             d = gamepad1.left_stick_y * -1;
@@ -77,6 +74,11 @@ public class i8b extends LinearOpMode {
             fr.setPower(frp);
             bl.setPower(blp);
             br.setPower(brp);
+
+            flc = fl.getCurrentPosition();
+            frc = fr.getCurrentPosition();
+            blc = bl.getCurrentPosition();
+            brc = br.getCurrentPosition();
 
             telemetry.addData("POS", "FL: %.1f, FR: %.1f, BL: %.1f, BR: %.1f",
                     flc, frc, blc, brc
