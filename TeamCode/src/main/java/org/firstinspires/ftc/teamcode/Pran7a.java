@@ -27,6 +27,12 @@ public class Pran7a extends LinearOpMode {
         fr.setDirection(DcMotorSimple.Direction.FORWARD);
         br.setDirection(DcMotorSimple.Direction.FORWARD);
 
+        fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        bl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        br.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+
         fl.setPower(0);
         fr.setPower(0);
         bl.setPower(0);
@@ -43,12 +49,16 @@ public class Pran7a extends LinearOpMode {
         double s;
         double r;
 
+        double ds = 0.4;
+        double ts = 0.2;
+        double ss = 0.3;
+
         double flp, frp, blp, brp;
 
         while (opModeIsActive()) {
-            d = gamepad1.left_stick_y * -1;
-            s = gamepad1.left_stick_x;
-            r = gamepad1.right_stick_x;
+            d = (gamepad1.left_stick_y * -1) * ds;
+            s = (gamepad1.left_stick_x) * ss;
+            r = (gamepad1.right_stick_x) * ts;
 
             flp = d + r + s;
             frp = d - r - s;
