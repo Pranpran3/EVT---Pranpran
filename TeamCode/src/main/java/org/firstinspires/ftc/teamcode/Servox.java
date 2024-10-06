@@ -17,6 +17,9 @@ public class Servox extends LinearOpMode {
             if (gamepad1.a) {
                 servo1.setPosition(1);
             }
+            if (gamepad1.b) {
+                servo1.setPosition(0);
+            }
         }
     }
 }
