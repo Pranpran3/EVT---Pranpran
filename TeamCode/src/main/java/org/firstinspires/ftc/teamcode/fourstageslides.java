@@ -28,8 +28,7 @@ public class fourstageslides extends LinearOpMode {
             if (gamepad1.a) {
                 fl.setPower(0.25);
                 fl.setTargetPosition(976);
-                fl.wait(100);
-                fl.setPower(0.25);
+                fl.setPower(-0.25);
                 fl.setTargetPosition(0);
             } else {
                 fl.setPower(0);
