@@ -20,19 +20,21 @@ public class fourstageslides extends LinearOpMode {
 
         fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
+        fl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
         fl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        fl.setTargetPosition(976);
 
         waitForStart();
 
+        fl.setPower(0.25);
         while (opModeIsActive()) {
-            if (gamepad1.a) {
-                fl.setPower(0.25);
-                fl.setTargetPosition(976);
-                fl.setPower(-0.25);
-                fl.setTargetPosition(0);
-            } else {
-                fl.setPower(0);
-            }
+            idle();
         }
+
+        fl.setPower(-0.25);
+
+        fl.setPower(0);
     }
 }
