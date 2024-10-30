@@ -32,20 +32,12 @@ public class LinearSlideOp extends LinearOpMode {
 
         waitForStart();
 
-        if (gamepad1.dpad_up) {
+        while (gamepad1.dpad_up) {
             fl.setPower(0.25);
             fr.setPower(0.25);
         }
 
-        while (opModeIsActive() && fl.isBusy()) {
-            idle();
-        }
-
-        while (opModeIsActive() && fr.isBusy()) {
-            idle();
-        }
-
-        if (gamepad1.dpad_down) {
+        while (gamepad1.dpad_down) {
             fl.setPower(-0.25);
             fr.setPower(-0.25);
         }
