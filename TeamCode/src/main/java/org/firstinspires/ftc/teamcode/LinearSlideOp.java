@@ -16,6 +16,8 @@ public class LinearSlideOp extends LinearOpMode {
         fl = hardwareMap.get(DcMotor.class, "fl");
         fr = hardwareMap.get(DcMotor.class, "fr");
 
+        fl.setDirection(DcMotorSimple.Direction.REVERSE);
+
         fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
@@ -32,12 +34,12 @@ public class LinearSlideOp extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            while (gamepad1.dpad_up) {
+            while (gamepad1.a) {
                 fl.setPower(0.25);
                 fr.setPower(0.25);
             }
 
-            while (gamepad1.dpad_down) {
+            while (gamepad1.b) {
                 fl.setPower(-0.25);
                 fr.setPower(-0.25);
             }
