@@ -16,8 +16,6 @@ public class LinearSlideOp extends LinearOpMode {
         fl = hardwareMap.get(DcMotor.class, "fl");
         fr = hardwareMap.get(DcMotor.class, "fr");
 
-        fl.setDirection(DcMotorSimple.Direction.REVERSE);
-
         fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
