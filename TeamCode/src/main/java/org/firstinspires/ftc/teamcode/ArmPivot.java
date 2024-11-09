@@ -20,7 +20,7 @@ public class ArmPivot extends LinearOpMode {
 
         fl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        fl.setTargetPosition(-1000);
+        fl.setTargetPosition(1000);
 
         waitForStart();
 
