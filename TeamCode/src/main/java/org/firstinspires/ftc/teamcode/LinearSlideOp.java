@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -24,6 +25,12 @@ public class LinearSlideOp extends LinearOpMode {
         fl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         fr.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
+        fl.setTargetPosition(3000);
+        fr.setTargetPosition(3000);
+
+        fl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        fr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
         fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
@@ -34,12 +41,20 @@ public class LinearSlideOp extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            while (gamepad1.a) {
+            if (gamepad1.a) {
                 fl.setPower(0.25);
                 fr.setPower(0.25);
             }
 
-            while (gamepad1.b) {
+            while (opModeIsActive() && fl.isBusy()) {
+                idle();
+            }
+
+            while (opModeIsActive() && fr.isBusy()) {
+                idle();
+            }
+
+            if (gamepad1.b) {
                 fl.setPower(-0.25);
                 fr.setPower(-0.25);
             }
