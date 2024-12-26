@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp (name = "4")
 
-public class TASK4 extends OpMode {
+public class task4 extends OpMode {
 
     DcMotor fl = null;
     DcMotor fr = null;
@@ -16,7 +16,6 @@ public class TASK4 extends OpMode {
 
     @Override
     public void init() {
-
         fl = hardwareMap.get(DcMotor.class, "fl");
         fr = hardwareMap.get(DcMotor.class, "fr");
         bl = hardwareMap.get(DcMotor.class, "bl");
